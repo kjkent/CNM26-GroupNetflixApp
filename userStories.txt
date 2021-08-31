@@ -1,0 +1,24 @@
+As a <user role>, I want this <action> so that I can get this <value>. 
+
+Epic 
+====================
+
+As a movie fan, I want a database of movies that I can join, so I can securely add to the database and search for my favorite movies. 
+
+User Stories
+====================
+
+Landing Page
+====================
+As a movie fan, I want to easily see the funtions on the movie landing page. 
+
+As a user, I want to sign up to the movie app so that I can add and search movies. 
+
+As a user I want a quick and secure login so that I can use the movie database. 
+
+Functional Page
+====================
+
+As a user, I want to add a movie to the database so that I can be a contributer to the database. 
+
+As a user, I want a simple search facility so that I can easily find the movie that I want (by name).
