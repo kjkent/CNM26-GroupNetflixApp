@@ -9,7 +9,9 @@ const landingRouter = require("./routes/landingPage");
 
 const app = express();
 
-// app.listen(port, () => {
-//     console.log("listening");
-// });
+app.use("/landingpage", landingRouter);
+
+app.listen(port, () => {
+    console.log("listening");
+});
 
