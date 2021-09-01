@@ -1,9 +1,22 @@
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+=======
+
+body {
+  align-items: center;
+  background-image: url("./assets/background.jpeg");
+  background-position: center;
+  text-align: center;
+  margin: 300px;
+}
+
+
+>>>>>>> homepage
 .App {
   text-align: center;
   height: 100vh;
