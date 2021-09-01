@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import HomeScreen from './HomeScreen';
 
-function App() {
+function LoginScreen() {
   return (
-    <div className="app">
+    <div className="loginscreen">
       <HomeScreen/> 
       </div>    
   );
 }
 
-export default App;
+export default LoginScreen;
