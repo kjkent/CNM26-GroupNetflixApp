@@ -5,6 +5,7 @@ const express = require("express");
 
 const { connection } = require("./db.js");
 const port = process.env.PORT;
+const landingRouter = require("./routes/landingPage");
 
 const app = express();
 
