@@ -28,6 +28,7 @@ function LoginScreen() {
         <form> 
          <input placeholder="Email" type="email"/>
          <input placeholder="Password" type="password"/>
+         <input placeholder="Retype Password" type="password"/>
          </form>
            <button className="signup_button">Sign up </button>
        </div>
