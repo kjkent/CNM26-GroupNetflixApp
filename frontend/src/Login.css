@@ -1,20 +1,27 @@
-
-
 .signbox {
-    margin-left: 60px;
-    padding-top: 150px;
-    height: 150px; 
-    background: rgb(0, 0, 0); /* fallback color */
-    background: rgba(0, 0, 0, 0.7);
-    width: 300px;
+    left: 0;
+    right: 0; 
+    max-width: 300px;
+    padding: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0,0,0,0.85); 
 }
 
-.signin_title {
-    font-size: 3rem;
-    font-weight: 800;
+loginScreen > form {
+    display: grid; 
+    flex-direction:column; 
 }
 
-.signin_button{
+.loginScreen > form > input {
+    outline-width: 2; 
+    height: 40px; 
+    margin-bottom: 14px; 
+    border: none;
+    padding: 5px 15px;
+}
+
+.submit{
     cursor: pointer;
     color: white;
     outline: none;
@@ -29,29 +36,3 @@
     padding-bottom:0.5rem; 
 }
 
-.signup_button{
-    cursor: pointer;
-    color: white;
-    outline: none;
-    border: none;
-    font-weight: 700;
-    border-radius:0.2vw; 
-    padding-left: 2rem;
-    padding-right:2rem; 
-    margin-right: 1rem;
-    padding-top: 0.5rem;
-    background-color: rgba(51,51,51,0.5);
-    padding-bottom:0.5rem; 
-}
-
-.signin_button:hover {
-    color: black;
-    background-color: white;
-    transition: all 0.2s; 
-}
-
-.signup_button:hover {
-    color: black;
-    background-color: white;
-    transition: all 0.2s; 
-}
