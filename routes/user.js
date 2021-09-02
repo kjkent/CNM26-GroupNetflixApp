@@ -21,7 +21,8 @@ router.post("/register", async (req, res) => {
         return res.status(401).json({msg: "Please enter your username"});
     }
 
-    
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(req.body.password, salt);
 });
 
 router.post("/login", (req, res) => {
