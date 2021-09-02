@@ -9,15 +9,17 @@ import {
   Route
 } from "react-router-dom"; 
 
+
 function App() {
+
   return (
     <div className="App">
-
       <Router>
         <Switch> 
           <Route path= "/" exact component ={Login} /> 
           < Route path="/profile" component={HomeScreen} />
         </Switch>
+        )}
       </Router>
     </div>    
   );

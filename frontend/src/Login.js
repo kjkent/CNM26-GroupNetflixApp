@@ -1,5 +1,4 @@
 import React from 'react';
-import HomeScreen from './HomeScreen';
 import './Login.css'; 
 
 function LoginScreen() {
@@ -14,12 +13,23 @@ function LoginScreen() {
       }}
       > 
 
-      <div className ="signbox"> 
+      
+<div className ="signbox"> 
        <h1 className="signin_title"> Sign In </h1>
        <div className="signin_buttons">
-           <button className="signin_button">Sign in</button>
-           <button className="signup_button">New to Netflix? sign up now </button>
-     
+         <form> 
+         <input placeholder="Email" type="email"/>
+         <input placeholder="Password" type="password"/>
+         </form>
+           <button type="submit">Sign In </button> 
+
+
+        <h1 className="signin_title"> New? Sign up now </h1>
+        <form> 
+         <input placeholder="Email" type="email"/>
+         <input placeholder="Password" type="password"/>
+         </form>
+           <button className="signup_button">Sign up </button>
        </div>
        </div> 
        </header>
