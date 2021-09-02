@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react"; 
 import "./Nav.css";
 
@@ -12,6 +11,7 @@ const transitionNavBar =() => {
         handleShow(false)
     }
 };
+
 
 useEffect(() => {
     window.addEventListener("scroll",transitionNavBar); 
