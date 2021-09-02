@@ -7,7 +7,7 @@
 
 
 .banner_contents {
-    margin-left: 30px;
+    margin-left: 20px;
     padding-top: 140px;
     height: 190px;
 }
@@ -15,7 +15,6 @@
 .banner_title {
     font-size: 3rem;
     font-weight: 800;
-    padding-bottom: 0.3rem;
 }
 
 .banner_description {
@@ -56,4 +55,11 @@
     color: black;
     background-color: white;
     transition: all 0.2s; 
+}
+
+.banner_search {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-left: 1px;
+    padding-bottom: 0.8rem;
 }
