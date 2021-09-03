@@ -15,6 +15,6 @@ app.use("/movie", movieRouter);
 app.use("*", errorRouter);
 
 app.listen(port, () => {
-    console.log(`Listening on port ${process.env.PORT}`);
+    console.log(`Listening on port ${process.env.PORT}.`);
 });
 
