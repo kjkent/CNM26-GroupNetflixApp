@@ -1,7 +1,9 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const { addUser } = require("../utils/user");
+const User = require("../models/user");
 
 const router = express.Router();
 
@@ -24,13 +26,19 @@ router.post("/register", async (req, res) => {
     const salt = await bcrypt.genSalt(saltRounds);
     const hash = await bcrypt.hash(req.body.password, salt);
 
-    await addUser(req.body.email, hash);
-    res.status(201).json({"message": "Created user"});
+    const user = await addUser(req.body.email, hash);
+    const token = jwt.sign({_id: this._id}, process.env.SECRET_KEY, {});
+    res.status(201).json({"message": "Created user", email, token});
+    // res.status(201).send({user, token});
+    console.log(user, token)
     
 });
 
-router.post("/login", (req, res) => {
-    res.status(200).json({msg: "login route working"});
+router.post("/login", async (req, res) => {
+    const user = await User.findOne({email: req.body.email});
+    if(!user) {
+        throw new Error("Email not found")
+    }
 });
 
  module.exports = router;

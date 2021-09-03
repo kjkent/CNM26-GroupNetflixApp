@@ -7,8 +7,7 @@ const addUser = async (email, passwordHash) => {
 
     const newUser = new User({email, passwordHash});
     await newUser.save();
-    console.log("addUser has been reached")
-    console.log(newUser);
+   
 
     } catch (error) {
         console.log(error);
