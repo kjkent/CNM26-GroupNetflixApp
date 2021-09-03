@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { connection } = require("../db");
 
 const User = mongoose.model("users", {
-    name: {
+    email: {
         type: String,
         required: true,
     },
