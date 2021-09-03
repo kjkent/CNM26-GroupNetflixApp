@@ -54,14 +54,12 @@ const handleChange = (event) => {
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt="netflixlogo"
         />
-
         <img
           className="nav_avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt="netflixavatar"
         /> 
     </div>
-
     <div className ="signbox"> 
       <div className="container">
       <div className="app-wrapper">
@@ -118,16 +116,29 @@ const handleChange = (event) => {
         </div> 
 
         <button className="submit" onClick={handleFormSubmit}>Sign up </button>
-        {/* <div className ="resetpassword">
+        /* 
+           ---------------------------------------------------------------------------
+               MERGE CONFLICT
+              
+               <h1 className="signin_title"> New? Sign up now </h1>
+        <form> 
+         <input placeholder="Email" type="email"/>
+         <input placeholder="Password" type="password"/>
+         <input placeholder="Retype Password" type="password"/>
+         </form>
+           <button className="signup_button">Sign up </button>
+        ---------------------------------------------------------------------------
+        
+        <div className ="resetpassword">
         <label className = "label"> Reset Password </label>
         </div>
-        
+     
       <input className="Reset Password" 
       type="password" 
       name="password" 
       value={values.password}
       onChange ={handleChange}
-      /> */}
+      /> */
     
       </form>
       </header>
