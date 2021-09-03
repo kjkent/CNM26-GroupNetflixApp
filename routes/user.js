@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const passport = require("passport");
 
 const { addUser } = require("../utils/user");
 const User = require("../models/user");
@@ -28,19 +29,23 @@ router.post("/register", async (req, res) => {
 
     const user = await addUser(req.body.email, hash);
     const token = jwt.sign({_id: this._id}, process.env.SECRET_KEY, {});
-    res.status(201).json({"message": "Created user", email, token});
+    res.status(201).send({user, token});
     // res.status(201).send({user, token});
-    console.log(user, token)
     
 });
 
 router.post("/login", async (req, res) => {
-    const user = await User.findOne({email: req.body.email});
-    if(!user) {
-        throw new Error("Email not found")
+    try {
+        const user = await User.findUserLogin(req.body.email, req.body.password);
+        const token = jwt.sign({_id: this._id}, process.env.SECRET_KEY, {});
+        res.status(200).send({user, token});
+    } catch (error) {
+        console.log(error);
+        res.status(400).send({msg: "Error: cannot login in"});
     }
 });
 
  module.exports = router;
 
- 
+//  =======================================================
+
