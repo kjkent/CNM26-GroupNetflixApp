@@ -2,7 +2,7 @@ const express = require("express");
 const movie = require("../utils/movie");
 const router = express.Router();
 
-// Lists movies
+// Lists movies -- titles only. More details can be found using the find route
 router.get("/", async (req, res) => {
     res.status(200).json({"movies": await movie.list()});
 });
@@ -15,7 +15,7 @@ router.post("/add", async (req, res) => {
         req.body.imdb,
         req.body.summary
     );
-    res.status(201).json({"response": `Added film ${req.body.title}`});
+    res.status(201).json({"response": `Added film "${req.body.title}"`});
 });
 
 // Finds a movie when passed a title as a "title" query parameter
@@ -29,14 +29,14 @@ router.get("/find", async (req, res) => {
 // the field to update, and the updated content. 
 router.put("/update", async (req, res) => {
     await movie.update(req.body.title, req.body.field, req.body.update);
-    res.status(200).json({"response": `Updated ${req.body.title}`});
+    res.status(200).json({"response": `Updated "${req.body.title}"`});
 });
 
 
 // Deletes a movie. As "find" above, requires URI-encoded title to be passed as a query param
 router.delete("/delete", async (req, res) => {
     await movie.delete(req.query.title);
-    res.status(200).json({"response": `${req.query.title} has been deleted`});
+    res.status(200).json({"response": `"${req.query.title}" has been deleted`});
 });
 
 module.exports = router;
