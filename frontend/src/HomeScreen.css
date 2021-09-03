@@ -3,3 +3,8 @@
     color: white;
     object-fit: contain;
 }
+
+.h3 {
+    background: rgba(0,0,0,0.85);    
+}
+

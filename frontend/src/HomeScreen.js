@@ -15,12 +15,13 @@ function HomeScreen() {
         <div className="homeScreen" > 
         <Nav/>
         <Banner/>  
+        <div className ="title"> 
           <h3> Popular on Netflix</h3>
         <Popular/>
         
           <h3> Advanced Search</h3>
         <Searchbar/> 
-    
+        </div> 
          </div>
 
 
