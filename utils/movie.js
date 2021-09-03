@@ -1,6 +1,6 @@
 const Movie = require("../models/movie");
 
-exports.createMovie = async (name, year, imdb, summary) => {
+exports.add = async (name, year, imdb, summary) => {
     try {
         const movie = new Movie({
             title: name,
@@ -14,7 +14,7 @@ exports.createMovie = async (name, year, imdb, summary) => {
     }
 };
 
-exports.listMovies = async () => {
+exports.list = async () => {
     try {
         return await Movie.find({}, { title: 1, _id: 0 });
     } catch (error) {
@@ -23,7 +23,7 @@ exports.listMovies = async () => {
     }
 };
 
-exports.findMovieByName = async (name) => {
+exports.find = async (name) => {
     try {
         return await Movie.findOne({ title: name });
     } catch (error) {
@@ -32,7 +32,7 @@ exports.findMovieByName = async (name) => {
     }
 };
 
-exports.updateMovie = async (name, field, update) => {
+exports.update = async (name, field, update) => {
     try {
         if (field === "title") {
             await Movie.updateOne({title: name}, {title: update});
@@ -48,7 +48,7 @@ exports.updateMovie = async (name, field, update) => {
     }
 };
 
-exports.deleteMovie = async (name) => {
+exports.delete = async (name) => {
     try {
         await Movie.deleteOne({title: name});
     } catch (error) {
