@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Login.css'; 
 import validation from "./validation"; 
 
 
-const LoginScreen =()  => {
+const LoginScreen =({ submitForm })  => {
     const [values, setValues] = useState({
       email: "",
       password: "",
 });
     
  
-/* errors set to empty objject */ 
+/* errors set to empty object */ 
 const [errors, setErrors] = useState ({});
+const [dataIsCorrect, setDataCorrect] =useState(false); 
 
 const handleChange = (event) => {
   setValues({
@@ -26,7 +27,14 @@ const handleChange = (event) => {
       event.preventDefault();
         /* sort errors if any */
       setErrors(validation(values));
+      setDataCorrect(true);
     };
+
+    useEffect(()=> {
+      if(Object.keys(errors).length === 0 && dataIsCorrect) {
+        submitForm(true);
+      } 
+    }, [errors]);
 
   return (
 
@@ -34,12 +42,25 @@ const handleChange = (event) => {
       className ="banner" 
       style= {{ 
           backgroundSize:"cover",
-          backgroundImage: `url("https://springboard-cdn.appadvice.com/wp-content/appadvice-v2-media/2016/11/Netflix-background_860c8ece6b34fb4f43af02255ca8f225-xl.jpg")`,
-          backgroundPosition: "center center",  
-          backgroundRepeat: "repeat", 
+          backgroundImage: `url("https://images.spot.im/v1/production/iwwvxqjjwv55qfptixeq")`,
+          backgroundPosition: "center center",    
       }}
       > 
 
+
+      <div className="nav_contents">
+        <img
+          className="nav_logo"
+          src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
+          alt="netflixlogo"
+        />
+
+        <img
+          className="nav_avatar"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+          alt="netflixavatar"
+        /> 
+    </div>
 
     <div className ="signbox"> 
       <div className="container">
@@ -107,12 +128,9 @@ const handleChange = (event) => {
       value={values.password}
       onChange ={handleChange}
       /> */}
+    
       </form>
       </header>
+  );
       
-       
-  ); 
-    } 
-    
-
-export default LoginScreen;
+export default LoginScreen; 

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Login from "./Login";
 import LoginSuccess from "./LoginSuccess";
 
-function Form() {
+function Form =() => {
     const [formIsSubmitted, setFormSubmitted] = useState(false);
     
     const submitForm = () => {
@@ -12,12 +12,7 @@ function Form() {
     return (
         <div>
             { !formIsSubmitted ? (
-            <SignupForm submitForm={submitForm} />
-            ) : (
-            <SignupFormSuccess/>
-            )}
-        </div>
-    );
+            <SignupForm submitForm={submitForm}/> : <SignupFormSuccess/>}</div>;
 };
 
-export default Form
+export default Form;
