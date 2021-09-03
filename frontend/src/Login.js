@@ -3,7 +3,7 @@ import './Login.css';
 import validation from "./validation"; 
 
 
-const LoginScreen =({ submitForm })  => {
+const LoginScreen = ({ submitForm })  => {
     const [values, setValues] = useState({
       email: "",
       password: "",
@@ -43,7 +43,7 @@ const handleChange = (event) => {
       style= {{ 
           backgroundSize:"cover",
           backgroundImage: `url("https://images.spot.im/v1/production/iwwvxqjjwv55qfptixeq")`,
-          backgroundPosition: "center center",    
+          backgroundPosition: "center center"
       }}
       > 
 
@@ -116,8 +116,8 @@ const handleChange = (event) => {
         </div> 
 
         <button className="submit" onClick={handleFormSubmit}>Sign up </button>
-        /* 
-           ---------------------------------------------------------------------------
+        
+           {/* ---------------------------------------------------------------------------
                MERGE CONFLICT
               
                <h1 className="signin_title"> New? Sign up now </h1>
@@ -127,7 +127,7 @@ const handleChange = (event) => {
          <input placeholder="Retype Password" type="password"/>
          </form>
            <button className="signup_button">Sign up </button>
-        ---------------------------------------------------------------------------
+        --------------------------------------------------------------------------- */}
         
         <div className ="resetpassword">
         <label className = "label"> Reset Password </label>
@@ -138,10 +138,11 @@ const handleChange = (event) => {
       name="password" 
       value={values.password}
       onChange ={handleChange}
-      /> */
+      /> 
     
       </form>
       </header>
-  );
+  );    
+};
       
 export default LoginScreen; 
