@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const FormFunctions = (submitForm, validation) => {
     const [values, setValues] = useState({
         email: "",
-        password: "",
+        password: ""
     });
 
     const [errors, setErrors] = useState ({});

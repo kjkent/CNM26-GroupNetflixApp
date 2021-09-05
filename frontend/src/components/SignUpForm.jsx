@@ -8,9 +8,26 @@ function SignUpForm({ submitForm }) {
 
     const { handleChange, handleFormSubmit, values, errors } = FormFunctions (submitForm, validation);
 
+    const connectValidation = async () => {
+        const obj = JSON.stringify({
+            email: values.email,
+            password: values.password
+        });
+
+        const response = await fetch ("http//localhost/user/register", {
+            mode: "cors",
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            body: obj
+        });
+
+        const data = await response.json();
+        console.log( { data });
+    }
+
     return (
         <>
-        <form>
+        <form onSubmit={handleFormSubmit}>
             <h1 className="signin_title"> New? Sign up now </h1>
             <div className = "emailnew">
                 <label className = "label"> Email </label>
@@ -34,31 +51,19 @@ function SignUpForm({ submitForm }) {
                 {errors.password && <p className="error"> {errors.password} </p>}
             </div> 
         
-           {/* ---------------------------------------------------------------------------
-    //            MERGE CONFLICT
-              
-    //            <h1 className="signin_title"> New? Sign up now </h1>
-    //     <form> 
-    //      <input placeholder="Email" type="email"/>
-    //      <input placeholder="Password" type="password"/>
-    //      <input placeholder="Retype Password" type="password"/>
-    //      </form>
-    //        <button className="signup_button">Sign up </button>
-    //     ---------------------------------------------------------------------------  */}
-        
-                <div className ="resetpassword">
-                    <label className = "label"> Retype your password </label>
-                </div>
+            {/* <div className ="resetpassword">
+                <label className = "label"> Retype your password </label>
+            </div>
                 
-                <input className="Reset Password" 
-                    type="password" 
-                    name="password" 
-                    value={values.password}
-                    onChange ={handleChange}
-                /> 
-                <button className="submit" onClick={handleFormSubmit}>Sign up </button>
-                <p>Already have an account? <Link to="/login">Click Here!!!</Link></p>
-            </form>
+            <input className="Reset Password" 
+                type="password" 
+                name="password" 
+                value={values.passwordCheck}
+                onChange ={handleChange}
+            />  */}
+            <button className="submit" onClick={connectValidation}>Sign up </button>
+            <p>Already have an account? <Link to="/login">Click Here!!!</Link></p>
+        </form>
         </>
         
     )

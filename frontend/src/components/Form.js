@@ -14,7 +14,6 @@ const Form = () => {
     return (
         <div>
             { !formIsSubmitted ? <SignUpForm submitForm={submitForm}/> : <SignUpFormSuccess/>}
-            <p>form page</p>
         </div>
     )    
 };

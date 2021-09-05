@@ -1,13 +1,21 @@
-import React from 'react'
+import { useState, useEffect } from "react";
 import SignInForm from './SignInForm'
-import SignUpForm from './SignUpForm'
+import SignInFormSuccess from "./SignInFormSuccess"
 
 function LoginPage() {
+    const [formIsSubmitted, setFormIsSubmitted] = useState(false);
+
+    const submitForm = () => {
+        setFormIsSubmitted(true);
+    }; 
     return (
        <>
-        <SignInForm />
+        { !formIsSubmitted ? <SignInForm submitForm={submitForm}/> : <SignInFormSuccess/>}
        </>
     )
 }
 
-export default LoginPage
+
+
+
+export default LoginPage;

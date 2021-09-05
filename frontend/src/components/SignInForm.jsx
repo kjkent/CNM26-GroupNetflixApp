@@ -2,32 +2,40 @@
 
 import React, { useState } from "react";
 import validation from "./validation"; 
+import FormFunctions from "./formFunctions";
 
-const SignInForm = () => {
-    const [values, setValues] = useState({
-        email: "",
-        password: "",
-    });
-    const [errors, setErrors] = useState ({});
-    const [dataIsCorrect, setDataCorrect] =useState(false); 
 
-    const handleChange = (event) => {
-        setValues({
-          ...values,
-          [event.target.name]: event.target.value,
-        });
-      };
+const SignInForm = ( { submitForm }) => {
 
-    const handleFormSubmit = (event) => {
-      event.preventDefault();
-        /* sort errors if any */
-      setErrors(validation(values));
-      setDataCorrect(true);
-    };
+    const { handleChange, handleFormSubmit, values, errors } = FormFunctions (submitForm, validation);
+    // const [values, setValues] = useState({
+    //     email: "",
+    //     password: "",
+    // });
+    // const [errors, setErrors] = useState ({});
+    // const [dataIsCorrect, setDataCorrect] =useState(false); 
+
+    // const handleChange = (event) => {
+    //     setValues({
+    //       ...values,
+    //       [event.target.name]: event.target.value,
+    //     });
+    //   };
+
+    // const handleFormSubmit = (event) => {
+    //   event.preventDefault();
+    //     /* sort errors if any */
+    //   setErrors(validation(values));
+    //   setDataCorrect(true);
+    // };
+
+    const connectValidation = () => {
+      console.log("yes connectValidation works")
+    }
     
     return (
         <>
-             <form className ="form-wrapper">
+             <form className ="form-wrapper" onSubmit={handleFormSubmit}>
             <h1 className="signin_title"> Sign In </h1>
             <div className ="email">
               <label className ="label"> Email </label>
@@ -51,7 +59,7 @@ const SignInForm = () => {
            /> 
            {errors.password && <p className="error"> {errors.password} </p>}
            </div> 
-         <button className="submit" onClick={handleFormSubmit}>Sign In </button>
+         <button className="submit" onClick={connectValidation}>Sign In </button>
         </form>
         
         </>
