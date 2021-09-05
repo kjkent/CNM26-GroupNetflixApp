@@ -8,21 +8,26 @@ function SignUpForm({ submitForm }) {
 
     const { handleChange, handleFormSubmit, values, errors } = FormFunctions (submitForm, validation);
 
-    const connectValidation = async () => {
-        const obj = JSON.stringify({
-            email: values.email,
-            password: values.password
-        });
+    const connectValidation = async (values) => {
+        // try {
+        //     const obj = JSON.stringify({
+        //         email: values.email,
+        //         password: values.password
+        //     });
 
-        const response = await fetch ("http//localhost/user/register", {
-            mode: "cors",
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            body: obj
-        });
+        //     const response = await fetch ("http//localhost/user/register", {
+        //         mode: "cors",
+        //         method: "post",
+        //         headers: { "Content-Type": "application/json" },
+        //         body: obj
+        //     });
 
-        const data = await response.json();
-        console.log( { data });
+        //     const data = await response.json();
+        //     console.log( { data });
+        // } catch (error) {
+        //     console.log(error);
+        // }    
+        console.log(values.email)
     }
 
     return (
@@ -36,7 +41,7 @@ function SignUpForm({ submitForm }) {
                 name="email" 
                 value={values.email}
                 onChange={handleChange}
-                /> 
+            /> 
                 {errors.email && <p className="error"> {errors.email} </p>}
             </div> 
 
@@ -47,7 +52,7 @@ function SignUpForm({ submitForm }) {
                 name="password" 
                 value={values.password}
                 onChange={handleChange}
-                />
+            />
                 {errors.password && <p className="error"> {errors.password} </p>}
             </div> 
         

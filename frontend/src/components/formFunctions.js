@@ -23,6 +23,7 @@ const FormFunctions = (submitForm, validation) => {
         /* sort errors if any */
         setErrors(validation(values));
         setDataCorrect(true);
+        console.log(values.email)
     };
 
     useEffect(()=> {
