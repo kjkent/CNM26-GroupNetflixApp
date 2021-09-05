@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    passwordHash: {
+    password: {
         type: String,
         required: true,
     },
@@ -18,7 +18,7 @@ userSchema.statics.findUserLogin = async (email, password) => {
         if(!user) {
             throw new Error("We cannot find that email");
         }
-        const compare = await bcrypt.compare(password, user.passwordHash);
+        const compare = await bcrypt.compare(password, user.password);
         if(!compare) {
             throw new Error("Your passwords do not match");
         }

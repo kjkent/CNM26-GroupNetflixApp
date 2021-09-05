@@ -34,6 +34,19 @@ router.post("/register", async (req, res) => {
     
 });
 
+router.post("/addUser", (req, res) => {
+    const email = req.body.email;
+    const password = req.body.passwordHash;
+    const user = new User ({
+        email,
+        password
+    });
+
+    user.save();
+    res.status(201).send({user});
+    console.log(user);
+});
+
 router.post("/login", async (req, res) => {
     try {
         const user = await User.findUserLogin(req.body.email, req.body.password);

@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+const axios = require("axios");
 
 const FormFunctions = (submitForm, validation) => {
     const [values, setValues] = useState({
@@ -24,6 +25,13 @@ const FormFunctions = (submitForm, validation) => {
         setErrors(validation(values));
         setDataCorrect(true);
         console.log(values.email)
+
+        const user = {
+            email: values.email,
+            passwordHash: values.password
+        }; 
+        axios.post("http://localhost:80/user/addUser", user);
+        console.log(user)
     };
 
     useEffect(()=> {

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
+  "proxy": "http//localhost:3000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bootstrap": "npm install && cd frontend && npm install",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/kjkent/CNM26-GroupNetflixApp#readme",
   "dependencies": {
+    "axios": "^0.21.3",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
