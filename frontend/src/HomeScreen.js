@@ -4,7 +4,7 @@ import "./HomeScreen.css";
 import Nav from "./Nav"; 
 import Searchbar from "./components/Searchbar";
 import Popular from "./components/Popular"; 
-import Login from './Login';
+// import Login from './components/Login';
 
 
 
