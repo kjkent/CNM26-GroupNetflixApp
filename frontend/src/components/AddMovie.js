@@ -11,26 +11,33 @@ const AddMovie = () => {
         summary: ""
     });
 
-    const handleClick = (event) => {
+
+
+    const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("adding button is working")
+        console.log(values);
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setValues({...values, [name]: value,});
     };
 
     return (
         <>
             <div className="container--flex container__addmovieform--large">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="container--flex container__addmovieform--medium">
                         <label>Title</label>
-                        <input />
+                        <input type="text" name="title" value={values.title} onChange={handleChange}/>
                         <label>Year</label>
-                        <input />
+                        <input type="number" name="year" value={values.year} onChange={handleChange}/>
                         <label>IMDB</label>
-                        <input />
+                        <input type="url" name="imdb" value={values.imdb} onChange={handleChange}/>
                         <label>Summary</label>
-                        <input />
+                        <input type="text" name="summary" value={values.summary} onChange={handleChange}/>
                     </div>
-                    <button onClick={handleClick}>Add</button>
+                    <button >Add</button>
                 </form>
             </div>
         </>
