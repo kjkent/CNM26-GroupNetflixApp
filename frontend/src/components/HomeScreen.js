@@ -1,9 +1,9 @@
 import React from 'react'
-import Banner from "./Banner";
+import Banner from "../Banner";
 import "./HomeScreen.css";
-import Nav from "./Nav"; 
-import Searchbar from "./components/Searchbar";
-import Popular from "./components/Popular"; 
+import Nav from "../Nav"; 
+import Searchbar from "./Searchbar";
+import Popular from "./Popular"; 
 // import Login from './components/Login';
 
 

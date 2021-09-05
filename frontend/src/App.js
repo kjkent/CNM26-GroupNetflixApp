@@ -1,6 +1,6 @@
 import React from 'react';
 // import './App.css';
-import HomeScreen from './HomeScreen';
+import HomeScreen from './components/HomeScreen';
 // import Login from './components/Login';
 import LoginPage from "./components/LoginPage";
 import Home from "./components/Home";
@@ -22,8 +22,9 @@ function App() {
         <Switch> 
           <Route path= "/" exact component ={Home} /> 
           <Route path= "/form" exact component = {Form} />
-          {/* < Route path="/profile" component={HomeScreen} /> */}
+          < Route path="/profile" component={HomeScreen} />
           <Route path = "/login" exact component = {LoginPage} />
+          {/* <Route path = "/search" exact comppnent = {Search} /> */}
         </Switch>
         
       </Router>
