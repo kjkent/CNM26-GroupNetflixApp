@@ -56,16 +56,6 @@ function SignUpForm({ submitForm }) {
                 {errors.password && <p className="error"> {errors.password} </p>}
             </div> 
         
-            {/* <div className ="resetpassword">
-                <label className = "label"> Retype your password </label>
-            </div>
-                
-            <input className="Reset Password" 
-                type="password" 
-                name="password" 
-                value={values.passwordCheck}
-                onChange ={handleChange}
-            />  */}
             <button className="submit" onClick={connectValidation}>Sign up </button>
             <p>Already have an account? <Link to="/login">Click Here!!!</Link></p>
         </form>
@@ -74,4 +64,4 @@ function SignUpForm({ submitForm }) {
     )
 }
 
-export default SignUpForm
+export default SignUpForm;

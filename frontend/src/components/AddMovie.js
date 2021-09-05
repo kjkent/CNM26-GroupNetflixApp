@@ -1,6 +1,9 @@
 
+
 import { useState } from 'react'
 import "./AddMovie.css";
+
+const axios = require("axios");
 
 const AddMovie = () => {
 
@@ -16,6 +19,15 @@ const AddMovie = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(values);
+
+        const movie = {
+            title: values.title,
+            year: values.year,
+            imdb: values.imdb,
+            summary: values.summary
+        };
+        axios.post("http://localhost:80/movie/add", movie);
+        console.log(movie);
     };
 
     const handleChange = (event) => {
