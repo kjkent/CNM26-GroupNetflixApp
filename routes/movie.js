@@ -23,6 +23,7 @@ router.post("/add", async (req, res) => {
 // (use encodeURIComponent on title string in frontend and send output as query string)
 router.get("/find", async (req, res) => {
     res.status(200).json({"result": await movie.find(req.query.title)});
+    // return await movie.find(req.query.title)
 });
 
 // Updates a movie. PUT JSON body takes the title of the film to be update,
