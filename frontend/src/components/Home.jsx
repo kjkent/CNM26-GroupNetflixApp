@@ -1,10 +1,14 @@
 
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
-function Home() {
+const Home = () => {
     return (
         <div>
-            <p>Home page</p>
+            <h1>Netflix!!!!</h1>
+            <button>
+                <Link to="/Form"><p>Sign up for your free account today!</p></Link>
+            </button>
         </div>
     )
 }
