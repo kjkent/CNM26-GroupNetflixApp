@@ -1,54 +1,63 @@
 import React, { useState, useEffect } from "react";
-import './Login.css'; 
+// import './Login.css'; 
 import validation from "./validation"; 
+import SignInForm from "./SignInForm";
 
 
-const LoginScreen = ({ submitForm })  => {
-    const [values, setValues] = useState({
-      email: "",
-      password: "",
-});
+const LoginScreen = ()  => {
+//     const [values, setValues] = useState({
+//       email: "",
+//       password: "",
+// });
     
  
 /* errors set to empty object */ 
-const [errors, setErrors] = useState ({});
-const [dataIsCorrect, setDataCorrect] =useState(false); 
+  // const [errors, setErrors] = useState ({});
+  // const [dataIsCorrect, setDataCorrect] =useState(false); 
+  // const [formIsSubmitted, setFormIsSubmitted] = useState(false);
 
-const handleChange = (event) => {
-  setValues({
-    ...values,
-    [event.target.name]: event.target.value,
-  });
-};
+  // const handleChange = (event) => {
+  //   setValues({
+  //     ...values,
+  //     [event.target.name]: event.target.value,
+  //   });
+  // };
+
+
 
 
 /* stops form reloading on sign up click*/
-    const handleFormSubmit = (event) => {
-      event.preventDefault();
-        /* sort errors if any */
-      setErrors(validation(values));
-      setDataCorrect(true);
-    };
+  //   const handleFormSubmit = (event) => {
+  //     event.preventDefault();
+  //       /* sort errors if any */
+  //     setErrors(validation(values));
+  //     setDataCorrect(true);
+  //   };
 
-    useEffect(()=> {
-      if(Object.keys(errors).length === 0 && dataIsCorrect) {
-        submitForm(true);
-      } 
-    }, [errors]);
+  //   useEffect(()=> {
+  //     if(Object.keys(errors).length === 0 && dataIsCorrect) {
+  //       submitForm(true);
+  //     } 
+  //   }, [errors]);
+
+  //   const submitForm = () => {
+  //     setFormIsSubmitted(true);
+  // }; 
 
   return (
-
-      <header
+    <>
+    <SignInForm />
+      {/* <header
       className ="banner" 
       style= {{ 
           backgroundSize:"cover",
           backgroundImage: `url("https://images.spot.im/v1/production/iwwvxqjjwv55qfptixeq")`,
           backgroundPosition: "center center"
       }}
-      > 
+      >
+        </header> */}
 
-
-      <div className="nav_contents">
+      {/* <div className="nav_contents">
         <img
           className="nav_logo"
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
@@ -60,17 +69,18 @@ const handleChange = (event) => {
           alt="netflixavatar"
         /> 
     </div>
+    
     <div className ="signbox"> 
       <div className="container">
       <div className="app-wrapper">
        </div>
        </div> 
-       </div>  
-          <form className ="form-wrapper">
+       </div>   */}
+         {/* <form className ="form-wrapper">
             <h1 className="signin_title"> Sign In </h1>
             <div className ="email">
               <label className ="label"> Email </label>
-            <input className="Email" 
+            <in put className="Email" 
             type="email"
              name="email" 
              value={values.email}
@@ -91,7 +101,8 @@ const handleChange = (event) => {
            {errors.password && <p className="error"> {errors.password} </p>}
            </div> 
          <button className="submit" onClick={handleFormSubmit}>Sign In </button>
-
+      </form> */}
+      {/* <form>
         <h1 className="signin_title"> New? Sign up now </h1>
         <div className = "emailnew">
         <label className = "label"> Email </label>
@@ -116,7 +127,7 @@ const handleChange = (event) => {
         </div> 
 
         <button className="submit" onClick={handleFormSubmit}>Sign up </button>
-        
+        </form> */}
            {/* ---------------------------------------------------------------------------
                MERGE CONFLICT
               
@@ -129,7 +140,7 @@ const handleChange = (event) => {
            <button className="signup_button">Sign up </button>
         --------------------------------------------------------------------------- */}
         
-        <div className ="resetpassword">
+        {/* <div className ="resetpassword">
         <label className = "label"> Reset Password </label>
         </div>
      
@@ -138,10 +149,10 @@ const handleChange = (event) => {
       name="password" 
       value={values.password}
       onChange ={handleChange}
-      /> 
+      />  */}
     
-      </form>
-      </header>
+      
+  </>      
   );    
 };
       

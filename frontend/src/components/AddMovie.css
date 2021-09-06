@@ -1,0 +1,10 @@
+
+.container--flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__addmovieform--large {
+    width: 40%;
+    margin: 0 auto 1em auto;
+}

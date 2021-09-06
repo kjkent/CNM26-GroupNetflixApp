@@ -14,7 +14,7 @@ exports.add = async (name, year, imdb, summary) => {
     }
 };
 
-exports.list = async () => {
+exports.list = async (name) => {
     try {
         return await Movie.find({}, { title: 1, _id: 0 });
     } catch (error) {

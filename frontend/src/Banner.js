@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Banner.css";
 import { Link } from "react-router-dom"; 
-import LoginScreen from './Login';
+import LoginScreen from './components/Login';
 
 function Banner() {
 /* shorten desription */ 
