@@ -1,12 +1,12 @@
 const Movie = require("../models/movie");
 
-exports.add = async (name, year, imdb, summary) => {
+exports.add = async (title, year, imdb, summary) => {
     try {
         const movie = new Movie({
-            title: name,
-            year: year,
-            imdb: imdb,
-            summary: summary,
+            title,
+            year,
+            imdb,
+            summary,
         });
         await movie.save();
     } catch (error) {
@@ -16,41 +16,33 @@ exports.add = async (name, year, imdb, summary) => {
 
 exports.list = async (name) => {
     try {
-        return await Movie.find({}, { title: 1, _id: 0 });
+        return await Movie.find({}, {title: 1, _id: 0});
     } catch (error) {
         console.log(error);
         return [];
     }
 };
 
-exports.find = async (name) => {
+exports.find = async (title) => {
     try {
-        return await Movie.findOne({ title: name });
+        return await Movie.findOne({title});
     } catch (error) {
         console.log(error);
         return [];
     }
 };
 
-exports.update = async (name, field, update) => {
+exports.update = async (title, field, update) => {
     try {
-        if (field === "title") {
-            await Movie.updateOne({title: name}, {title: update});
-        } else if (field === "year") {
-            await Movie.updateOne({title: name}, {year: update});
-        } else if (field === "imdb") {
-            await Movie.updateOne({title: name}, {imdb: update});
-        } else if (field === "summary") {
-            await Movie.updateOne({title: name}, {summary: update});
-        }
+        await Movie.updateOne({title}, {[field]: update});
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.delete = async (name) => {
+exports.delete = async (title) => {
     try {
-        await Movie.deleteOne({title: name});
+        await Movie.deleteOne({title});
     } catch (error) {
         console.log(error);
     }
